@@ -1,0 +1,42 @@
+import math
+
+def hitung_massa(energi_kinetik, kecepatan):
+    return (2 * energi_kinetik) / (kecepatan ** 2)
+
+def hitung_kecepatan(energi_kinetik, massa):
+    return math.sqrt((2 * energi_kinetik) / massa)
+
+def hitung_energi_kinetik(massa, kecepatan):
+    return 0.5 * massa * (kecepatan ** 2)
+
+def main():
+    print("Pilih perhitungan:")
+    print("1. Hitung Massa")
+    print("2. Hitung Kecepatan")
+    print("3. Hitung Energi Kinetik")
+    
+    pilihan = input("Masukkan pilihan (1/2/3): ")
+    
+    if pilihan == '1':
+        energi_kinetik = float(input("Masukkan energi kinetik (Joule): "))
+        kecepatan = float(input("Masukkan kecepatan (m/s): "))
+        massa = hitung_massa(energi_kinetik, kecepatan)
+        print(f"Massa: {massa:.2f} kg")
+        
+    elif pilihan == '2':
+        energi_kinetik = float(input("Masukkan energi kinetik (Joule): "))
+        massa = float(input("Masukkan massa (kg): "))
+        kecepatan = hitung_kecepatan(energi_kinetik, massa)
+        print(f"Kecepatan: {kecepatan:.2f} m/s")
+
+    elif pilihan == '3':
+        massa = float(input("Masukkan massa (kg): "))
+        kecepatan = float(input("Masukkan kecepatan (m/s): "))
+        energi_kinetik = hitung_energi_kinetik(massa, kecepatan)
+        print(f"Energi Kinetik: {energi_kinetik:.2f} Joule")
+        
+    else:
+        print("Pilihan tidak valid.")
+
+if __name__ == "__main__":
+    main()
